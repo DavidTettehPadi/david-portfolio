@@ -6,7 +6,7 @@ The portfolio showcases my development journey, technical skills, and projects a
 
 ## 🌐 Live Website
 
-Coming soon.
+[Visit my portfolio](https://davidtettehpadi.github.io/david-portfolio/)
 
 ## 👨🏾‍💻 About the Project
 
