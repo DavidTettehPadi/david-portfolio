@@ -1,0 +1,23 @@
+{
+  "name": "david-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for **David Tetteh Padi**, an aspiring Full-Stack Developer with a background in healthcare and mental health.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidTettehPadi/david-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidTettehPadi/david-portfolio/issues"
+  },
+  "homepage": "https://github.com/DavidTettehPadi/david-portfolio#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.3.3"
+  }
+}
