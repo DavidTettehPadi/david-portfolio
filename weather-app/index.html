@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#f4f5f0">
+		<meta name="description" content="A local weather dashboard with live conditions and a seven-day forecast.">
+		<title>Local Weather | Fieldnotes</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="app-shell">
+			<header class="topbar">
+				<a class="brand" href="#top" aria-label="Fieldnotes weather home">
+					<span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+					<span>FIELDNOTES <span class="brand-light">/ WEATHER</span></span>
+				</a>
+				<div class="topbar-right">
+					<span class="live-indicator"><span></span> LIVE FORECAST</span>
+					<div class="unit-switch" role="group" aria-label="Temperature units">
+						<button class="unit-button is-active" type="button" data-unit="celsius" aria-pressed="true">°C</button>
+						<button class="unit-button" type="button" data-unit="fahrenheit" aria-pressed="false">°F</button>
+					</div>
+				</div>
+			</header>
+
+			<main id="top">
+				<section class="search-row" aria-label="Find local weather">
+					<form id="search-form" class="search-form" role="search">
+						<span class="search-icon" aria-hidden="true"></span>
+						<label class="sr-only" for="location-search">Search for a city</label>
+						<input id="location-search" type="search" placeholder="Search city, town or postcode" autocomplete="off" autocapitalize="off" spellcheck="false" required>
+						<button class="search-submit" type="submit" aria-label="Search locations"><span aria-hidden="true">↗</span></button>
+					</form>
+					<button id="location-button" class="location-button" type="button">
+						<span aria-hidden="true">◎</span> Use my location
+					</button>
+				</section>
+
+				<p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+				<div id="search-results" class="search-results" role="listbox" aria-label="Matching locations" hidden></div>
+
+				<section id="weather-content" class="weather-content" aria-live="polite" hidden>
+					<div class="weather-heading">
+						<div>
+							<p class="eyebrow"><span class="eyebrow-line"></span> YOUR LOCAL FORECAST</p>
+							<h1 id="location-name">—</h1>
+							  <p id="location-region" class="location-region"></p>
+							<p id="local-date" class="local-date">—</p>
+						</div>
+						<p id="updated-time" class="updated-time"></p>
+					</div>
+
+					<section class="current-panel" aria-label="Current weather">
+						<div class="current-primary">
+							<div class="condition-symbol" id="current-symbol" aria-hidden="true">☀</div>
+							<div class="current-reading">
+								<p id="current-condition" class="current-condition">—</p>
+								<p class="temperature"><span id="current-temperature">—</span><span class="degree-mark">°</span></p>
+								<p class="feels-like">Feels like <span id="feels-like">—</span>°</p>
+							</div>
+						</div>
+						<div class="current-details">
+							<div class="detail-item">
+								<span class="detail-icon" aria-hidden="true">↗</span>
+								<span class="detail-label">WIND</span>
+								<strong><span id="wind-speed">—</span> <small id="wind-unit">km/h</small></strong>
+								<span id="wind-direction" class="detail-note">—</span>
+							</div>
+							<div class="detail-item">
+								<span class="detail-icon rain-icon" aria-hidden="true">⌁</span>
+								<span class="detail-label">HUMIDITY</span>
+								<strong><span id="humidity">—</span><small>%</small></strong>
+								<span class="detail-note">relative humidity</span>
+							</div>
+							<div class="detail-item">
+								<span class="detail-icon sun-icon" aria-hidden="true">◉</span>
+								<span class="detail-label">UV INDEX</span>
+								<strong><span id="uv-index">—</span><small>/ 11</small></strong>
+								<span id="uv-label" class="detail-note">—</span>
+							</div>
+						</div>
+						<p id="current-summary" class="current-summary">—</p>
+					</section>
+
+					<div class="forecast-grid">
+						<section class="forecast-section hourly-section" aria-labelledby="hourly-title">
+							<div class="section-heading">
+								<div>
+									<p class="eyebrow"><span class="eyebrow-line"></span> THE NEXT HOURS</p>
+									<h2 id="hourly-title">Hour by hour</h2>
+								</div>
+								<span class="section-unit">TODAY</span>
+							</div>
+							<div id="hourly-forecast" class="hourly-list"></div>
+						</section>
+
+						<section class="forecast-section week-section" aria-labelledby="week-title">
+							<div class="section-heading">
+								<div>
+									<p class="eyebrow"><span class="eyebrow-line"></span> PLAN AHEAD</p>
+									<h2 id="week-title">7-day forecast</h2>
+								</div>
+								<span class="section-unit">HIGH / LOW</span>
+							</div>
+							<div id="daily-forecast" class="daily-list"></div>
+						</section>
+					</div>
+					<footer class="source-note">Forecast data <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a><span id="coordinates"></span></footer>
+				</section>
+
+				<section id="empty-state" class="empty-state">
+					<div class="empty-sun" aria-hidden="true"><span></span></div>
+					<p class="eyebrow"><span class="eyebrow-line"></span> WEATHER, WHERE YOU ARE</p>
+					<h1>A clearer view<br>of <span>what’s outside.</span></h1>
+					<p class="empty-copy">Search a place to see current conditions and a seven-day forecast, powered by live local data.</p>
+					<div class="empty-footnote"><span class="live-dot"></span> No guesswork. Live forecast data.</div>
+				</section>
+			</main>
+			<div class="page-grain" aria-hidden="true"></div>
+		</div>
+	</body>
+</html>

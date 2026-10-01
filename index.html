@@ -9,7 +9,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body class="bg-slate-950 text-white antialiased">
@@ -406,8 +406,9 @@
       </div>
 
     </div>
-  <!-- Project card -->
-<div class="mx-auto grid max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl md:grid-cols-2">
+  <div class="project-carousel mx-auto max-w-5xl" aria-label="Featured projects carousel">
+    <div id="project-track" class="project-track" tabindex="0" aria-label="Featured projects. Swipe or use arrow keys to browse.">
+<div class="project-slide grid overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl md:grid-cols-2">
 
   <!-- LEFT COLUMN -->
   <div class="flex flex-col justify-center p-8 sm:p-10">
@@ -468,19 +469,19 @@
   <!-- RIGHT COLUMN -->
   <div class="flex items-center justify-center bg-slate-950 p-6">
 
-    <img
-      src="images/adepa-pharmacy.png"
-      alt="Adepa Pharmacy website homepage"
+    <iframe
+      src="https://davidtettehpadi.github.io/adepa-pharmacy/"
+      title="Live preview of Adepa Pharmacy"
       loading="lazy"
-      class="block h-auto w-full rounded-2xl object-contain"
-    >
+      class="block h-96 w-full rounded-2xl border-0 bg-slate-950"
+    ></iframe>
 
   </div>
 
 </div>
 
 <!-- Digital clock project card -->
-<div class="mx-auto mt-8 grid max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl md:grid-cols-2">
+<div class="project-slide grid overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl md:grid-cols-2">
 
   <div class="flex flex-col justify-center p-8 sm:p-10">
 
@@ -530,13 +531,68 @@
       src="https://davidtettehpadi.github.io/my-digital-clock/"
       title="Live preview of My Digital Clock"
       loading="lazy"
-      aria-hidden="true"
-      tabindex="-1"
-      class="pointer-events-none block h-96 w-full rounded-2xl border-0 bg-slate-950"
+      tabindex="0"
+      class="block h-96 w-full rounded-2xl border-0 bg-slate-950"
     ></iframe>
   </div>
 
 </div>
+
+<div id="weather-project" class="project-slide grid overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl md:grid-cols-2">
+
+  <div class="flex flex-col justify-center p-8 sm:p-10">
+
+    <div class="mb-4 flex flex-wrap items-center gap-2">
+      <span class="rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-slate-300">HTML</span>
+      <span class="rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-slate-300">CSS</span>
+      <span class="rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-slate-300">JavaScript</span>
+      <span class="rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-slate-300">Open-Meteo API</span>
+    </div>
+
+    <h3 class="text-2xl font-bold">Local Weather</h3>
+
+    <p class="mt-4 leading-relaxed text-slate-400">
+      A live local forecast with city search, optional device location,
+      current conditions, hourly rain chances and a seven-day outlook.
+    </p>
+
+    <p class="mt-4 leading-relaxed text-slate-400">
+      Built with vanilla JavaScript and Open-Meteo forecast data, with
+      Celsius and Fahrenheit controls and a responsive layout.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="weather-app/"
+        class="inline-flex items-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-blue-500"
+      >
+        Open Weather App
+        <span class="ml-2" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="flex items-center justify-center bg-slate-950 p-6">
+    <iframe
+      src="weather-app/"
+      title="Live preview of the Local Weather app"
+      loading="lazy"
+      class="block h-96 w-full rounded-2xl border-0 bg-slate-950"
+    ></iframe>
+  </div>
+
+</div>
+
+    </div>
+    <div class="project-controls">
+      <span id="project-position" class="project-position" aria-live="polite">Projects 1 and 2 of 3</span>
+      <button id="next-projects" class="project-next" type="button" aria-label="Scroll right to the next projects">
+        <span>Next projects</span>
+        <span class="project-next-arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
 
 </section><!-- Projects section goes here -->
 
@@ -984,6 +1040,6 @@
 
 </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
