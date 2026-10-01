@@ -40,4 +40,4 @@ Open `http://localhost:8000`. Browser geolocation works on HTTPS or `localhost` 
 
 ## Source
 
-This app is part of the [David Tetteh Padi portfolio repository](https://github.com/DavidTettehPadi/david-portfolio/tree/main/weather-app).
+[View the standalone WeatherApp repository](https://github.com/DavidTettehPadi/WeatherApp). The portfolio also hosts a copy of the app for its live project preview.
