@@ -12,7 +12,7 @@ Personal portfolio for **David Tetteh Padi**, an aspiring full-stack developer w
 | --- | --- | --- |
 | Adepa Pharmacy | [Open the pharmacy website](https://davidtettehpadi.github.io/adepa-pharmacy/) | [GitHub repository](https://github.com/DavidTettehPadi/adepa-pharmacy) |
 | My Digital Clock | [Open the clock](https://davidtettehpadi.github.io/my-digital-clock/) | [GitHub repository](https://github.com/DavidTettehPadi/my-digital-clock) |
-| Local Weather | [Open the weather app](https://davidtettehpadi.github.io/david-portfolio/weather-app/) | [Weather app source](https://github.com/DavidTettehPadi/david-portfolio/tree/main/weather-app) |
+| Local Weather | [Open the weather app](https://davidtettehpadi.github.io/david-portfolio/weather-app/) | [Weather app source](https://github.com/DavidTettehPadi/WeatherApp) |
 
 The project section is a responsive horizontal carousel. On wider screens it displays two projects at a time; on smaller screens it displays one card and supports touch scrolling. Each project card includes a live preview and links to the demo or source.
 
